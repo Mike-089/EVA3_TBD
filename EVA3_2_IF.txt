@@ -1,0 +1,101 @@
+EVA3_2_IF
+
+MySQL Shell 8.0.38
+
+Copyright (c) 2016, 2024, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+ MySQL  SQL > \connect --mc root@localhost
+Creating a Classic session to 'root@localhost'
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 18
+Server version: 8.0.39 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:3306 ssl  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| empresa            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| tbd_e1             |
+| tbd_e2             |
+| world              |
++--------------------+
+9 rows in set (0.0013 sec)
+ MySQL  localhost:3306 ssl  SQL > create database tbd_e3;
+Query OK, 1 row affected (0.0099 sec)
+ MySQL  localhost:3306 ssl  SQL > use tbd_e3;
+Default schema set to `tbd_e3`.
+Fetching global names, object names from `tbd_e3` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select comparar_numeros(18,8);
++------------------------+
+| comparar_numeros(18,8) |
++------------------------+
+| MAYOR                  |
++------------------------+
+1 row in set (0.0031 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select comparar_numeros(8,8);
++-----------------------+
+| comparar_numeros(8,8) |
++-----------------------+
+| IGUAL                 |
++-----------------------+
+1 row in set (0.0005 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select comparar_numeros(8,10);
++------------------------+
+| comparar_numeros(8,10) |
++------------------------+
+| MENOR                  |
++------------------------+
+1 row in set (0.0006 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select mod(5,3);
++----------+
+| mod(5,3) |
++----------+
+|        2 |
++----------+
+1 row in set (0.0005 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select es_par(5);
++-----------+
+| es_par(5) |
++-----------+
+| ES IMPAR  |
++-----------+
+1 row in set (0.0010 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select es_par(4);
++-----------+
+| es_par(4) |
++-----------+
+| ES PAR    |
++-----------+
+1 row in set (0.0005 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select es_par(0);
++-----------+
+| es_par(0) |
++-----------+
+| ES PAR    |
++-----------+
+1 row in set (0.0005 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select conversion_temp(1,30);
++-----------------------+
+| conversion_temp(1,30) |
++-----------------------+
+| 303                   |
++-----------------------+
+1 row in set (0.0026 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select conversion_temp(4,30);
++-----------------------+
+| conversion_temp(4,30) |
++-----------------------+
+| NO VALIDO             |
++-----------------------+
+1 row in set (0.0007 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL >

@@ -1,0 +1,69 @@
+EVA3_3_CICLOS
+
+MySQL Shell 8.0.38
+
+Copyright (c) 2016, 2024, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+ MySQL  SQL > \connect --mc root@localhost
+Creating a Classic session to 'root@localhost'
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 24
+Server version: 8.0.39 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:3306 ssl  SQL > calcular_potencia_loop(5,2);
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'calcular_potencia_loop(5,2)' at line 1
+ MySQL  localhost:3306 ssl  SQL > select calcular_potencia_loop(5,2);
+ERROR: 1046 (3D000): No database selected
+ MySQL  localhost:3306 ssl  SQL > use tbd_e3;
+Default schema set to `tbd_e3`.
+Fetching global names, object names from `tbd_e3` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select calcular_potencia_loop(5,2);
+ERROR: 1054 (42S22): Unknown column 'exp' in 'field list'
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select calcular_potencia_loop(5,2);
++-----------------------------+
+| calcular_potencia_loop(5,2) |
++-----------------------------+
+|                         625 |
++-----------------------------+
+1 row in set (0.0013 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select calcular_potencia_loop(5,2);
++-----------------------------+
+| calcular_potencia_loop(5,2) |
++-----------------------------+
+|                          25 |
++-----------------------------+
+1 row in set (0.0013 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select calcular_potencia_while(5,2);
++------------------------------+
+| calcular_potencia_while(5,2) |
++------------------------------+
+|                           25 |
++------------------------------+
+1 row in set (0.0013 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select calcular_potencia_while(5,3);
++------------------------------+
+| calcular_potencia_while(5,3) |
++------------------------------+
+|                          625 |
++------------------------------+
+1 row in set (0.0005 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select calcular_potencia_repeat(5,3);
++-------------------------------+
+| calcular_potencia_repeat(5,3) |
++-------------------------------+
+|                           625 |
++-------------------------------+
+1 row in set (0.0014 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select calcular_potencia_repeat(5,2);
++-------------------------------+
+| calcular_potencia_repeat(5,2) |
++-------------------------------+
+|                            25 |
++-------------------------------+
+1 row in set (0.0006 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL >
